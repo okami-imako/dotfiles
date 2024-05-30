@@ -4,3 +4,6 @@
 	editor = nvim
 [init]
 	defaultBranch = master
+[user]
+	name = okami
+	email = barkan.makar@gmail.com
