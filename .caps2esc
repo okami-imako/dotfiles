@@ -1,5 +1,10 @@
+#!/bin/bash
+
 # caps is control, double shift is caps 
 setxkbmap -option ctrl:nocaps
 
 # control-nothing is escape
 xcape -e 'Control_L=Escape'
+
+# Set repeat delay and repeat speed
+xset r rate 300 50
