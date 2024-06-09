@@ -7,4 +7,4 @@ setxkbmap -option ctrl:nocaps
 xcape -e 'Control_L=Escape'
 
 # Set repeat delay and repeat speed
-xset r rate 300 50
+xset r rate 200 50
