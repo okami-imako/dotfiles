@@ -22,6 +22,9 @@ set nohlsearch
 vmap J :m '>+1<CR>gv=gv
 vmap K :m '<-2<CR>gv=gv
 
+nmap H ^
+nmap L $
+
 nmap <C-d> <C-d>zz
 nmap <C-u> <C-u>zz
 nmap n nzz

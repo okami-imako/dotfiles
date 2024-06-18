@@ -18,7 +18,7 @@ exec --no-startup-id /usr/lib/gsd-xsettings
 
 exec --no-startup-id picom -b
 exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/violet-city.jpg
-exec --no-startup-id ~/remaps.sh
+exec --no-startup-id ~/.remaps
 
 # kill any hanging polybar processes
 exec_always killall polybar
@@ -26,14 +26,14 @@ exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 
 bindsym $mod+shift+x exec betterlockscreen -l
 
-bindsym Print exec maim "/home/$USER/Pictures/Screenshots/$(date).jpg"
-bindsym $mod+Print exec maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).jpg"
-bindsym Shift+Print exec maim --select "/home/$USER/Pictures/$(date).jpg"
+bindsym Print exec maim -o "/home/$USER/Pictures/Screenshots/$(date).jpg"
+bindsym $mod+Print exec maim -o --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).jpg"
+bindsym Shift+Print exec maim -o --select "/home/$USER/Pictures/$(date).jpg"
 
 ## Clipboard Screenshots
-bindsym Ctrl+Print exec maim | xclip -selection clipboard -t image/png
-bindsym Ctrl+$mod+Print exec maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-bindsym Ctrl+Shift+Print exec maim --select | xclip -selection clipboard -t image/png
+bindsym Ctrl+Print exec maim -o | xclip -selection clipboard -t image/png
+bindsym Ctrl+$mod+Print exec maim -o --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym Ctrl+Shift+Print exec maim -o --select | xclip -selection clipboard -t image/png
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -74,7 +74,7 @@ floating_modifier $mod
 bindsym $mod+Return exec alacritty
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # start rofi (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show drun

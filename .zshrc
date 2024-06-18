@@ -31,7 +31,6 @@ zinit ice depth=1; zinit light jeffreytse/zsh-vi-mode
 autoload -U compinit && compinit
 
 zinit cdreplay -q
-
 # The plugin will auto execute this zvm_after_lazy_keybindings function
 function zvm_after_lazy_keybindings() {
   bindkey ^y autosuggest-accept
@@ -58,11 +57,14 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:*' fzf-bindings 'ctrl-y:accept'
+zstyle ':fzf-tab:*' accept-line enter
 
 # Aliases
 alias ls='ls --color'
 alias vim='nvim'
 alias c='clear'
+alias glog='git log --graph --topo-order --pretty='\''%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N'\'' --abbrev-commit'
 
 # Shell integrations
 zvm_after_init_commands+=('source <(fzf --zsh)')
@@ -81,6 +83,5 @@ export FZF_CTRL_T_OPTS="
 export FZF_CTRL_R_OPTS="
   --preview 'echo {}' --preview-window up:3:hidden:wrap
   --bind 'ctrl-/:toggle-preview'
-  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
-  --color header:italic
-  --header 'Press CTRL-Y to copy command into clipboard'"
+  --bind 'ctrl-y:accept'
+  --color header:italic"
