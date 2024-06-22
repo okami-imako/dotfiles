@@ -40,7 +40,7 @@ nmap <leader>sf <Action>(GotoFile)
 nmap [d <Action>(GotoPreviousError)
 nmap ]d <Action>(GotoNextError)
 nmap <leader>e <Action>(ShowErrorDescription)
-nmap <leader>q <Action>(ShowIntentionActions)
+nmap <leader>ca <Action>(ShowIntentionActions)
 
 nmap gI <Action>(GotoImplementation)
 nmap gr <Action>(FindUsages)
