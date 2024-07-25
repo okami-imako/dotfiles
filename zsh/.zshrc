@@ -86,12 +86,7 @@ export FZF_CTRL_R_OPTS="
   --bind 'ctrl-y:accept'
   --color header:italic"
 
-# Yazi stuff
-function yy() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}
+
+# Setup jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
