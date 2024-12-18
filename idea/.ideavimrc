@@ -25,6 +25,9 @@ vmap K :m '<-2<CR>gv=gv
 nmap H ^
 nmap L $
 
+vmap H ^
+vmap L $
+
 nmap <C-d> <C-d>zz
 nmap <C-u> <C-u>zz
 nmap n nzz
@@ -35,8 +38,20 @@ nmap <c-k> <c-w>k
 nmap <c-h> <c-w>h
 nmap <c-l> <c-w>l
 
-nmap <leader>pv <Action>(SelectInProjectView)
+nmap s <Action>(AceAction)
+
+nmap <leader>zt <Action>(ToggleZenMode)
+
+nmap <leader>a <Action>(AddToHarpoon)
+nmap <c-e> <Action>(ShowHarpoon)
+nmap <c-n> <Action>(GotoHarpoon1)
+nmap <c-v> <Action>(GotoHarpoon2)
+nmap <c-c> <Action>(GotoHarpoon3)
+
 nmap <leader>sf <Action>(GotoFile)
+nmap <leader>sg <Action>(FindInPath)
+
+nmap <leader>pv <Action>(SelectInProjectView)
 nmap [d <Action>(GotoPreviousError)
 nmap ]d <Action>(GotoNextError)
 nmap <leader>e <Action>(ShowErrorDescription)
@@ -49,4 +64,6 @@ nmap <leader>rn <Action>(RenameElement)
 nmap <c-y> <Action>(EditorChooseLookupItem)
 imap <c-y> <Action>(EditorChooseLookupItem)
 
+vnoremap <leader>d "_d
+vnoremap <leader>c "_di
 vnoremap <leader>p "_dP

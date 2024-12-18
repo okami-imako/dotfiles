@@ -65,6 +65,8 @@ alias ls='ls --color'
 alias vim='nvim'
 alias c='clear'
 alias glog='git log --graph --topo-order --pretty='\''%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N'\'' --abbrev-commit'
+alias kssh='kitty +kitten ssh'
+alias kan='sudo -b kanata --cfg ~/.config/kanata/kanata.kbd'
 
 # Shell integrations
 zvm_after_init_commands+=('source <(fzf --zsh)')
@@ -86,7 +88,19 @@ export FZF_CTRL_R_OPTS="
   --bind 'ctrl-y:accept'
   --color header:italic"
 
+# Yazi stuff
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
-# Setup jenv
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
+# Pack autocomplete
+. $(pack completion --shell zsh)
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
