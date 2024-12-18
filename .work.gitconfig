@@ -1,0 +1,17 @@
+[credential]
+	helper = store
+[core]
+	editor = nvim
+[init]
+	defaultBranch = master
+[user]
+	name = Makariy Barkan
+	email = mbarkan@box.com
+
+[includeIf "gitdir:~/Projects/personal/"]
+    path = ~/Projects/personal/.gitconfig
+
+[push]
+	autoSetupRemote = true
+[url "git@git.dev.box.net:"]
+	insteadOf = https://git.dev.box.net/
