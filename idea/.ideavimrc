@@ -51,7 +51,7 @@ nmap <c-c> <Action>(GotoHarpoon3)
 nmap <leader>sf <Action>(GotoFile)
 nmap <leader>sg <Action>(FindInPath)
 
-nmap <leader>pv <Action>(SelectInProjectView)
+nmap - <Action>(SelectInProjectView)
 nmap [d <Action>(GotoPreviousError)
 nmap ]d <Action>(GotoNextError)
 nmap <leader>e <Action>(ShowErrorDescription)
