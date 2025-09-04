@@ -1,5 +1,5 @@
 #!/bin/bash
-setxkbmap -layout us,ru -option grp:shifts_toggle
+setxkbmap -layout us,ru -option grp:shifts_toggle -option grp:win_space_toggle
 
 # caps is control, double shift is caps 
 setxkbmap -option ctrl:nocaps

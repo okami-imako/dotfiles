@@ -5,7 +5,7 @@
 [init]
 	defaultBranch = master
 [user]
-	name = okami
+	name = okami-imako
 	email = barkan.makar@gmail.com
 [push]
 	autoSetupRemote = true

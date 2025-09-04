@@ -26,14 +26,14 @@ exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 
 bindsym $mod+shift+x exec betterlockscreen -l
 
-bindsym Ctrl+Print exec maim -o --select "/home/$USER/Pictures/$(date).jpg"
-bindsym Ctrl+Shift+Print exec maim -o --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).jpg"
-bindsym Ctrl+$mod+Print exec maim -o "/home/$USER/Pictures/Screenshots/$(date).jpg"
+# bindsym Ctrl+Print exec maim -o --select "/home/$USER/Pictures/$(date).jpg"
+# bindsym Ctrl+Shift+Print exec maim -o --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).jpg"
+# bindsym Ctrl+$mod+Print exec maim -o "/home/$USER/Pictures/Screenshots/$(date).jpg"
 
 ## Clipboard Screenshots
-bindsym Print exec maim -o --select | xclip -selection clipboard -t image/png
-bindsym Shift+Print exec maim -o --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-bindsym $mod+Print exec maim -o | xclip -selection clipboard -t image/png
+bindsym Mod4+P exec maim -o --select | xclip -selection clipboard -t image/png
+# bindsym Mod4+Print exec maim -o --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+# bindsym $mod+Print exec maim -o | xclip -selection clipboard -t image/png
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -174,10 +174,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 5 px or 5 ppt
-        bindsym k resize grow height 5 px or 5 ppt
-        bindsym l resize shrink height 5 px or 5 ppt
-        bindsym semicolon resize grow width 5 px or 5 ppt
+        bindsym h resize shrink width 5 px or 5 ppt
+        bindsym j resize grow height 5 px or 5 ppt
+        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym l resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 5 px or 5 ppt
